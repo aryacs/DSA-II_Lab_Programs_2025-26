@@ -1,15 +1,16 @@
 #include<stdio.h>
-#include<stdlib.h>  
+#include<stdlib.h> 
+#include<string.h> 
 struct node
 {
-    int data;
+    char book_title[50];
     struct node *left;
     struct node *right;
 };
-struct node* create(int val)
+struct node* create(char book_title[])
 {
     struct node* root = (struct node*)malloc(sizeof(struct node));
-    root->data = val;
+    strcpy(root->data,book_title);
     root->left = NULL;
     root->right = NULL;
     return root;
@@ -23,8 +24,8 @@ void inorder(struct node* root)
     inorder(root->right);
 }
 int main(){
-struct node* root = create(5);
-root->left = create(10);
+struct node* root = create("Java");
+root->left = create("Programming");
 root->right = create(15);
 root->left->left = create(20);
 root->left->right = create(25);

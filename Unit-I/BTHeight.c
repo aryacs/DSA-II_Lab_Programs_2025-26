@@ -22,8 +22,6 @@ int Height(struct node* root)
     int rightHeight = Height(root->right);
     return 1 + (leftHeight > rightHeight?leftHeight:rightHeight);
 }
-
-
 int main(){
 struct node* root = create(5);
 root->left = create(10);
@@ -32,6 +30,8 @@ root->left->left = create(20);
 root->left->right = create(25);
 root->right->left = create(40);
 root->right->right = create(50);
+//root->right->right->left = create(60);
+//root->right->right->right = create(70);
 
 printf("\nThe Height of Binary Tree is=>%d\n", Height(root));
 return 0;

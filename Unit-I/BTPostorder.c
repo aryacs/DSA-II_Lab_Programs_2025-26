@@ -16,7 +16,7 @@ struct node* create(int val)
 }
 void postorder(struct node* root)
 {
-    if (root == NULL)
+    if (root == NULL)//base condition
         return;
     postorder(root->left);
     postorder(root->right);
